@@ -1,4 +1,4 @@
-//* Program 0-100 arasında rasgele bir sayi tutacak ve kullanicinin bu sayiyi 5 kere(hak) de bilmesini isteyecektir. Her yanlista hakkini bir dusurecek ve ARTTIR/AZALT diyerek kullaniciyi yonlendirecektir.Sonuc olarak kullanicinin hakki 0 olursa "Uzgunuz kaybettiniz" eger bildi ise "Tebrikler ... denemede bildiniz" yazacaktir.
+// Program 0-100 arasında rasgele bir sayi tutacak ve kullanicinin bu sayiyi 5 kere(hak) de bilmesini isteyecektir. Her yanlista hakkini bir dusurecek ve ARTTIR/AZALT diyerek kullaniciyi yonlendirecektir.Sonuc olarak kullanicinin hakki 0 olursa "Uzgunuz kaybettiniz" eger bildi ise "Tebrikler ... denemede bildiniz" yazacaktir. Dikkatli yap.
 console.log("*** WELCOME TO GUESS GAME ****");
 const randomNumber = Math.floor(Math.random() * 101);
 let remainingTrial = 5;
@@ -13,17 +13,18 @@ for (let trial = 1; trial <= 5; trial++) {
     continue;
   }
   if (userGuess === randomNumber) {
-    console.log(`Congrats! You guessed it right on the ${trial}. try.`);
+    console.log();
+    alert("Congrats! You guessed it right on the ${trial}. try.")
     break;
   } else {
     remainingTrial--;
     if (remainingTrial > 0) {
       const hint = userGuess < randomNumber ? "INCREASE" : "DECREASE";
-      console.log(
-        `Unfortunately wrong! Remaining trial: ${remainingTrial}. Please ${hint} the number.`
-      );
+      console.log();
+      alert(`Unfortunately wrong! Remaining trial: ${remainingTrial}. Please ${hint} the number.`)
     } else {
-      console.log(`Sorry you lost. The correct number is ${randomNumber}.`);
+      console.log();
+      alert(`Sorry you lost. The correct number is ${randomNumber}.`)
     }
   }
 }
